@@ -1,10 +1,4 @@
 #!/usr/bin/env python
-#
-# midiin_callback.py
-#
-"""Show how to receive MIDI input by setting a callback function."""
-
-from __future__ import print_function
 
 import logging
 import sys
