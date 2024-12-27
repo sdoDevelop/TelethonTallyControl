@@ -19,6 +19,7 @@ logging.basicConfig(level=logging.DEBUG)
 tally_ip = "10.10.10.10"
 tally_port = 5005
 tcp_buffer = 1024
+myip = "10.10.10.9"
 
 
 class MidiInputHandler(object):
@@ -65,6 +66,7 @@ class MidiInputHandler(object):
 
 def send_tcp_packet(message):
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    s.bind((myip, 0))
     s.connect((tally_ip, tally_port))
     s.send(message)
     s.close()
