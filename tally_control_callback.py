@@ -35,25 +35,25 @@ class MidiInputHandler(object):
     def message_filter(self, deltatime, message):
         message_string = None
         if message == [144, 38, 127]:
-            message_string = "HostA;Mute;On"
+            message_string = "LED1;Off;HostA;Mute;On"
         if message == [144, 38, 63]:
-            message_string = "HostA;Mute;Off"
+            message_string = "LED1;On;HostA;Mute;Off"
         if message == [144, 39, 127]:
-            message_string = "HostB;Mute;On"
+            message_string = "LED2;Off;HostB;Mute;On"
         if message == [144, 39, 63]:
-            message_string = "HostB;Mute;Off"
+            message_string = "LED2;On;HostB;Mute;Off"
         if message == [144, 40, 127]:
-            message_string = "HostC;Mute;On"
+            message_string = "LED3;Off;HostC;Mute;On"
         if message == [144, 40, 63]:
-            message_string = "HostC;Mute;Off"
+            message_string = "LED3;On;HostC;Mute;Off"
         if message == [144, 41, 127]:
-            message_string = "HostD;Mute;On"
+            message_string = "LED4;Off;HostD;Mute;On"
         if message == [144, 41, 63]:
-            message_string = "HostD;Mute;Off"
+            message_string = "LED4;On;HostD;Mute;Off"
         if message == [144, 42, 127]:
-            message_string = "Brett;Mute;On"
+            message_string = "LED5;Off;Brett;Mute;On"
         if message == [144, 42, 63]:
-            message_string = "Brett;Mute;Off"
+            message_string = "LED5;On;Brett;Mute;Off"
 
         if message_string is not None:
             print("[%s] @%0.6f %r [%s]" % (self.port, self._wallclock, message, message_string))
