@@ -23,7 +23,10 @@ def midi_setup():
         print("Connection Failed: available midi ports are as follows")
         print(available_ports)
         return None
-    
+
+def midi_callback():
+    pass
+
 def main_loop(midi_in):
     while True:
         midi_data = midi_in.get_message()
@@ -31,6 +34,11 @@ def main_loop(midi_in):
             print(midi_data)
         else:
             time.sleep(0.001)
+
+def message_handler(midi_data):
+    midi_message = midi_data[0]
+    midi_delta = midi_data[1]
+    
 
 if __name__ == "__main__" :
     midi_in = midi_setup()
