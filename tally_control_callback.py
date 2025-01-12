@@ -10,10 +10,10 @@ from rtmidi.midiutil import open_midiinput
 log = logging.getLogger('midiin_callback')
 logging.basicConfig(level=logging.DEBUG)
 
-tally_ip = "10.10.10.10"
+tally_ip = "10.75.140.5"
 tally_port = 5005
 tcp_buffer = 1024
-myip = "10.10.10.9"
+myip = "10.75.140.102"
 
 
 class MidiInputHandler(object):
