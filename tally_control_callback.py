@@ -59,11 +59,16 @@ class MidiInputHandler(object):
 
 
 def send_tcp_packet(message):
-    s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    s.bind((myip, 0))
-    s.connect((tally_ip, tally_port))
-    s.send(message)
-    s.close()
+    # UDP
+    sock = socket.socket(socket.AF_INET, # Internet
+             socket.SOCK_DGRAM) # UDP
+    sock.sendto(message, (tally_ip, tally_port))
+    # TCP
+    # s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    # s.bind((myip, 0))
+    # s.connect((tally_ip, tally_port))
+    # s.send(message)
+    # s.close()
 
 
 def main():
